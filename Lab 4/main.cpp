@@ -19,6 +19,25 @@ int main()
 
 	/*======= Load data from file(s) =======*/
 
+	if (option == 1)
+	{
+
+	}
+
+	else if (option == 2)
+	{
+
+	}
+
+	else if (option == 3)
+	{
+
+	}
+
+	else
+	{
+
+	}
 
 	cout << "1. Most Expensive set" << endl;
 	cout << "2. Largest piece count" << endl;
@@ -37,6 +56,45 @@ int main()
 	/*======= Print out how many sets were loaded =======*/
 	/*======= Based on the choice, execute the appropriate task and show the results =======*/
 
+	if (choice == 1)
+	{
+
+	}
+
+	else if (choice == 2)
+	{
+
+	}
+
+	else if (choice == 3)
+	{
+
+	}
+
+	else if (choice == 4)
+	{
+
+	}
+
+	else if (choice == 5)
+	{
+
+	}
+
+	else if (choice == 6)
+	{
+
+	}
+
+	else if (choice == 7)
+	{
+
+	}
+	
+	else 
+	{
+
+	}
+
 	return 0;
 }
-

@@ -81,6 +81,20 @@ LegoSet FindMostExpensive(const vector<LegoSet>& legosets)
 	return maxPrice;
 }
 
+
+LegoSet FindLeastExpensive(const vector<LegoSet>& legosets)
+{
+	LegoSet minPrice;
+	minPrice._price = 9999;
+	for (const LegoSet& legoset : legosets)
+	{
+		if (legoset._price < minPrice._price)
+			minPrice = legoset;
+	}
+
+	return minPrice;
+}
+
 LegoSet FindLargestPiece(const vector<LegoSet>& legosets)
 {
 	LegoSet maxPieces;
@@ -92,6 +106,19 @@ LegoSet FindLargestPiece(const vector<LegoSet>& legosets)
 	}
 
 	return maxPieces;
+}
+
+LegoSet FindLargestMinifigs(const vector<LegoSet>& legosets)
+{
+	LegoSet maxMinifigs;
+	maxMinifigs._minifigs = 0;
+	for (const LegoSet& legoset : legosets)
+	{
+		if (legoset._minifigs > maxMinifigs._minifigs)
+			maxMinifigs = legoset;
+	}
+
+	return maxMinifigs;
 }
 
 int main()
@@ -168,12 +195,6 @@ int main()
 	{
 		string input;
 		cin >> input;
-
-
-		
-
-			
-
 	}
 
 	else if (choice == 4)
@@ -183,22 +204,80 @@ int main()
 
 	else if (choice == 5)
 	{
-
+		int totalParts = 0;
+		for (unsigned int i = 0; i < lego1.size(); i++)
+			totalParts = totalParts + lego1[i]._pieces;
+		cout << "Total number of sets: " << lego1.size() << endl << endl;
+		cout << "Average part count for " << lego1.size() << " sets: " << totalParts / lego1.size() << endl;
 	}
 
 	else if (choice == 6)
 	{
-
+		double totalPrice = 0;
+		for (unsigned int i = 0; i < lego1.size(); i++)
+			totalPrice = totalPrice + lego1[i]._price;
+		cout << "Total number of sets: " << lego1.size() << endl << endl;
+		
+		cout << "Average price for " << lego1.size() << " sets: $" << totalPrice / lego1.size() << endl << endl;
+	
+		LegoSet min = FindLeastExpensive(lego1);
+		cout << "Least expensive set:" << endl;
+		cout << "Name: " << min._name << endl;
+		cout << "Number: " << min._number << endl;
+		cout << "Theme: " << min._theme << endl;
+		cout << "Price: $" << min._price << endl;
+		cout << "Minifigures: " << min._minifigs << endl;
+		cout << "Piece count: " << min._pieces << endl << endl << endl;
+				
+		LegoSet max = FindMostExpensive(lego1);
+		cout << "Most expensive set:" << endl;
+		cout << "Name: " << max._name << endl;
+		cout << "Number: " << max._number << endl;
+		cout << "Theme: " << max._theme << endl;
+		cout << "Price: $" << max._price << endl;
+		cout << "Minifigures: " << max._minifigs << endl;
+		cout << "Piece count : " << max._pieces << endl;
 	}
 
 	else if (choice == 7)
 	{
+		int totalMinifigs = 0;
+		for (unsigned int i = 0; i < lego1.size(); i++)
+			totalMinifigs = totalMinifigs + lego1[i]._minifigs;
+		cout << "Total number of sets: " << lego1.size() << endl << endl;
 
+		cout << "Average number of minifigures: " << lego1.size() << totalMinifigs / lego1.size() << endl << endl;
+
+		LegoSet max = FindLargestMinifigs(lego1);
+		cout << "Set with the most minifigures:" << endl;
+		cout << "Name: " << max._name << endl;
+		cout << "Number: " << max._number << endl;
+		cout << "Theme: " << max._theme << endl;
+		cout << "Price: $" << max._price << endl;
+		cout << "Minifigures: " << max._minifigs << endl;
+		cout << "Piece count : " << max._pieces << endl;
 	}
 
 	else if (choice == 8)
 	{
+		double totalPrice = 0;
+		for (unsigned int i = 0; i < lego1.size(); i++)
+			totalPrice = totalPrice + lego1[i]._price;
 
+		int totalMinifigs = 0;
+		for (unsigned int i = 0; i < lego1.size(); i++)
+			totalMinifigs = totalMinifigs + lego1[i]._minifigs;
+
+		int totalPieces = 0;
+		for (unsigned int i = 0; i < lego1.size(); i++)
+			totalPieces = totalPieces+ lego1[i]._pieces;
+				
+		cout << "Total number of sets: " << lego1.size() << endl << endl;
+
+		cout << "If you bought one of everything..." << endl;
+		cout << "It would cost: $" << totalPrice << endl;
+		cout << "You would have " << totalPieces << "pieces in your collection" << endl;
+		cout << "You would have an army of " << totalMinifigs << " minifigures!" << endl;
 	}
 
 	return 0;

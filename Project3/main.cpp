@@ -10,7 +10,7 @@
 using namespace std;
 
 int main()
-{
+{ 
     //Create window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Minesweeper");
     
@@ -38,6 +38,7 @@ int main()
     
     //Create vector for board with all hidden tiles
     vector<vector<Tile>> board;
+    board.clear();
     for (int i = 0; i < numRows; i++)
     {
         // new row
@@ -100,69 +101,6 @@ int main()
     cout << "Counter: " << counter << endl;
     cout << "Many: " << howManyTimes << endl;
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    //Read in testboard1
-    vector<vector<int>> mines;
-    mines.resize(numRows, std::vector<int>(numCols));
-    ifstream inFile1("boards/testboard1.brd");
-    if (inFile1.is_open())
-    {
-        //int mine = dataChar;
-        char dataChar;
-        for (int i = 0; i < numRows; i++)
-        {         
-            // new row
-            vector<int> row;
-            for (int j = 0; j < numCols; j++) {
-                // new tile for each col
-                                
-                inFile1.get(dataChar);
-                //cout << dataChar;
-              
-                int dataInt = static_cast<int>(dataChar);
-                dataInt = dataInt - 48;
-
-                mines[i][j] = dataInt;
-                //cout << mines[i][j];
-            }
-            inFile1.get(dataChar);
-            //mines.push_back(row);
-        }
-
-        //Print testboard1
-        for (size_t i = 0; i < mines.size(); ++i) {
-            for (size_t j = 0; j < mines[i].size(); ++j) {
-                std::cout << mines[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    }
-    
-    //Copy testboard1 into the empty board
-    for (int i = 0; i < numRows; i++)
-    {
-        // new row
-        //vector<Tile> row;
-        for (int j = 0; j < numCols; j++) {
-            // new tile for each col
-            if (mines[i][j] == 1)
-                realBoard.board[i][j]._isMine = true;
-        }
-        //board.push_back(row);
-    }
-    
-    */
-
-
     //Create spirtes for buttons
     sf::Sprite debug(TextureManager::GetTexture("debug"));
     debug.setPosition(500, 512);
@@ -174,6 +112,12 @@ int main()
     test_3.setPosition(692, 512);
     sf::Sprite face_happy(TextureManager::GetTexture("face_happy"));
     face_happy.setPosition(350, 512);
+    sf::Sprite digits(TextureManager::GetTexture("digits"));
+    digits.setPosition(100, 512);
+    sf::Sprite face_win(TextureManager::GetTexture("face_win"));
+    face_win.setPosition(350, 512);
+    sf::Sprite face_lose(TextureManager::GetTexture("face_lose"));
+    face_lose.setPosition(350, 512);
           
     while (window.isOpen())
     {
@@ -231,7 +175,18 @@ int main()
                     }
 
                     //Copy testboard1 into the empty board
-                    Board realBoard = Board(numRows, numCols, numMines, board);
+                    board.clear();
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            row.push_back(Tile(i, j));
+                        }
+                        board.push_back(row);
+                    }
+
                     for (int i = 0; i < numRows; i++)
                     {
                         // new row
@@ -253,8 +208,31 @@ int main()
                         }
                     }
 
-                    cout << "Number of mines: " << numMines;
+                    cout << "Number of mines: " << numMines << endl;
+
+                    //Print new board
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        //vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            if (realBoard.board[i][j]._isMine)
+                                cout << 1 << " ";
+                            else
+                                cout << 0 << " ";
+                        }
+                        cout << endl;
+                    }
+
+                    cout << endl;
                 }
+
+               
+
+
+
+
 
 
 
@@ -304,7 +282,18 @@ int main()
                     }
 
                     //Copy testboard2 into the empty board
-                    Board realBoard = Board(numRows, numCols, numMines, board);
+                    board.clear();
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            row.push_back(Tile(i, j));
+                        }
+                        board.push_back(row);
+                    }
+
                     for (int i = 0; i < numRows; i++)
                     {
                         // new row
@@ -322,7 +311,26 @@ int main()
                     }
                     
 
+                    //Print new board
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        //vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            if (realBoard.board[i][j]._isMine)
+                                cout << 1 << " ";
+                            else
+                                cout << 0 << " ";
+                        }
+                        cout << endl;
+                    }
+
+                    cout << endl;
+
                 }
+
+                
 
 
 
@@ -373,7 +381,18 @@ int main()
                     }
 
                     //Copy testboard3 into the empty board
-                    Board realBoard = Board(numRows, numCols, numMines, board);
+                    board.clear();
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            row.push_back(Tile(i, j));
+                        }
+                        board.push_back(row);
+                    }
+                    
                     for (int i = 0; i < numRows; i++)
                     {
                         // new row
@@ -390,10 +409,29 @@ int main()
                         }
                     }
 
+                    //Print new board
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        //vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            if (realBoard.board[i][j]._isMine)
+                                cout << 1 << " ";
+                            else
+                                cout << 0 << " ";
+                        }
+                        cout << endl;
+                    }
+
+                    cout << endl;
+
 
                 }
 
 
+
+               
 
 
                 //SMILEY BUTTON
@@ -401,7 +439,42 @@ int main()
                     && (mousePosition.y > 512 && mousePosition.y < 576))
                 {
 
+                    
+                    //Create Random numbers
+                    const int lowerBound = 0;
+                    const int upperBound = numRows * numCols - 1;
+                    const int numberOfRandomIntegers = numMines;
+                    std::random_device rd;
+                    std::mt19937 generator(rd());
+                    std::uniform_int_distribution<int> distribution(lowerBound, upperBound);
+                    vector<int> uniqueRandomNumbers;
+                    uniqueRandomNumbers.clear();
+                    while (uniqueRandomNumbers.size() < numberOfRandomIntegers)
+                    {
+                        int randomNumber = distribution(generator);
+                        uniqueRandomNumbers.push_back(randomNumber);
+                    }
+
+                    // Print the generated unique random integers
+                    std::cout << "Generated unique random integers:" << std::endl;
+                    for (int number : uniqueRandomNumbers)
+                        std::cout << number << " ";
+                    std::cout << std::endl;
+                    
+                    
+                    
                     //Set board to random numbers
+                    board.clear();
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            row.push_back(Tile(i, j));
+                        }
+                        board.push_back(row);
+                    }
                     int counter = 0;
                     int howManyTimes = 0;
                     for (int i = 0; i < numRows; i++)
@@ -428,6 +501,25 @@ int main()
 
 
 
+                //DEBUG BUTTON
+                if ((mousePosition.x > 499 && mousePosition.x < 564)
+                    && (mousePosition.y > 512 && mousePosition.y < 576) && realBoard._gameLose == false && realBoard._gameWin == false)
+                {
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            if (realBoard.board[i][j]._isRevealed == false && realBoard.board[i][j]._isMine == true)
+                                realBoard.board[i][j]._tileSpriteHidden = realBoard.board[i][j]._tileSpriteMine;
+                        }
+                    }
+                }
+
+
+
+
 
 
 
@@ -437,15 +529,16 @@ int main()
                 {
                         for (unsigned int i = 0; i < numRows; i++)
                         {
-                            if (realBoard.board[i][j].Contains(mousePosition.x, mousePosition.y))
+                            if (realBoard.board[i][j].Contains(mousePosition.x, mousePosition.y) && realBoard._gameWin == false && realBoard._gameLose == false)
                             {
+                                realBoard.recursiveCheckNeighbors(board[i][j]);
                                 realBoard.board[i][j].LeftClick();
                                 break;
                             }
                         }
                 }
             }
-            else if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right)
+            else if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Right && realBoard._gameWin == false && realBoard._gameLose == false)
             {
                 auto mousePosition = sf::Mouse::getPosition(window);
                 for (int j = 0; j < numCols; j++)
@@ -462,25 +555,106 @@ int main()
             }
         }
 
+
+
+
+        /*
+
+        //Set lose
+        if (realBoard._gameLose = true)
+        {
+            board.clear();
+            for (int i = 0; i < numRows; i++)
+            {
+                // new row
+                vector<Tile> row;
+                for (int j = 0; j < numCols; j++) {
+                    // new tile for each col
+                    row.push_back(Tile(i, j));
+                }
+                board.push_back(row);
+            }
+            for (int i = 0; i < numRows; i++)
+            {
+                // new row
+                vector<Tile> row;
+                for (int j = 0; j < numCols; j++) {
+                    // new tile for each col
+                    realBoard.board[i][j]._isMine = true;
+                    realBoard.board[i][j]._isRevealed = true;
+                }
+                board.push_back(row);
+            }
+            face_happy = face_lose;
+        }
+         
+        
+        //Set win
+        if (realBoard._gameWin = true)
+        {
+            board.clear();
+            for (int i = 0; i < numRows; i++)
+            {
+                // new row
+                vector<Tile> row;
+                for (int j = 0; j < numCols; j++) {
+                    // new tile for each col
+                    row.push_back(Tile(i, j));
+                }
+                board.push_back(row);
+            }
+            for (int i = 0; i < numRows; i++)
+            {
+                // new row
+                vector<Tile> row;
+                for (int j = 0; j < numCols; j++) {
+                    // new tile for each col
+                    realBoard.board[i][j]._isFlag = true;
+                    realBoard.board[i][j]._isRevealed = true;
+                }
+                board.push_back(row);
+            }
+            face_happy = face_win;
+        }
+
+
+
+        */
+
+
+
+
         window.clear();
 
+        
         //Draw board
         for (auto& row : realBoard.board)
         {
             for (auto& tile : row)
             {
-                if (tile._isRevealed)
+                if (tile._isRevealed && !tile._isMine)
                 {
                     window.draw(tile._tileSpriteRevealed);
                 }
-                else
-                {
-                    window.draw(tile._tileSpriteHidden);
-                }
-
-                if (tile._isMine)
+                else if (tile._isRevealed && tile._isMine)
                 {
                     window.draw(tile._tileSpriteMine);
+                    realBoard._gameLose = true;
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        // new row
+                        vector<Tile> row;
+                        for (int j = 0; j < numCols; j++) {
+                            // new tile for each col
+                            if (realBoard.board[i][j]._isRevealed == false && realBoard.board[i][j]._isMine == true)
+                                realBoard.board[i][j]._tileSpriteHidden = realBoard.board[i][j]._tileSpriteMine;
+                        }
+                    }
+                }
+
+                else if (!tile._isRevealed)
+                {
+                   window.draw(tile._tileSpriteHidden);
                 }
 
                 if (tile._isFlag)
@@ -490,12 +664,24 @@ int main()
             }
         }
 
+        
+
+
+      
+
+
+
+
+
+
+
         //Draw buttons
         window.draw(debug);
         window.draw(test_1);
         window.draw(test_2);
         window.draw(test_3);
         window.draw(face_happy);
+        window.draw(digits);
 
         window.display();
     }

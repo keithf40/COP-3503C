@@ -16,6 +16,10 @@ public:
 	vector<vector<int>> mines;
 	int _flagCounter = 0;
 	int _minesRemaining;
+	bool _gameLose = false;
+	bool _gameWin = false;
 public:
 	Board(int numRows, int numCols, int numMines, vector<vector<Tile>> boardInput);
+	vector<Tile*> getNeighbors(Tile& tile);
+	void recursiveCheckNeighbors(Tile& tile);
 };

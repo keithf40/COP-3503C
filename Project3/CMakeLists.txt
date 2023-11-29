@@ -20,6 +20,10 @@ FetchContent_MakeAvailable(SFML)
 # 3. libvorbis-dev
 # 4. libflac-dev
 
+file(COPY config.cfg DESTINATION .)
+file(COPY images DESTINATION .)
+file(COPY boards DESTINATION .)
+
 add_executable(${PROJECT_NAME}
     Board.cpp
     main.cpp

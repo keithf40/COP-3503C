@@ -20,6 +20,22 @@ Tile::Tile(unsigned int row, unsigned int column)
 	_tileSpriteRevealed.setPosition(column * 32.0f, row * 32.0f);
 	_tileSpriteMine.setPosition(column * 32.0f, row * 32.0f);
 	_tileSpriteFlag.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite1.setTexture(TextureManager::GetTexture("number_1"));
+	_tileSprite2.setTexture(TextureManager::GetTexture("number_2"));
+	_tileSprite3.setTexture(TextureManager::GetTexture("number_3"));
+	_tileSprite4.setTexture(TextureManager::GetTexture("number_4"));
+	_tileSprite5.setTexture(TextureManager::GetTexture("number_5"));
+	_tileSprite6.setTexture(TextureManager::GetTexture("number_6"));
+	_tileSprite7.setTexture(TextureManager::GetTexture("number_7"));
+	_tileSprite8.setTexture(TextureManager::GetTexture("number_8"));
+	_tileSprite1.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite2.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite3.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite4.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite5.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite6.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite7.setPosition(column * 32.0f, row * 32.0f);
+	_tileSprite8.setPosition(column * 32.0f, row * 32.0f);
 }
 
 sf::Sprite& Tile::GetSprite()
@@ -36,28 +52,138 @@ sf::Sprite& Tile::GetSprite()
 
 void Tile::SetPosition(float x, float y)
 {
+	_sprite.setPosition(x, y);
 	_tileSpriteHidden.setPosition(x, y);
 	_tileSpriteRevealed.setPosition(x, y);
 	_tileSpriteMine.setPosition(x, y);
 	_tileSpriteFlag.setPosition(x, y);
+	_tileSprite1.setPosition(x, y);
+	_tileSprite2.setPosition(x, y);
+	_tileSprite3.setPosition(x, y);
+	_tileSprite4.setPosition(x, y);
+	_tileSprite5.setPosition(x, y);
+	_tileSprite6.setPosition(x, y);
+	_tileSprite7.setPosition(x, y);
+	_tileSprite8.setPosition(x, y);
 }
 
 void Tile::LeftClick()
 {
-	if (!_isFlag && !_isMine)
-		_isRevealed = !_isRevealed;
-	else if (!_isFlag && _isMine)
-		_tileSpriteHidden = _tileSpriteMine;
+	if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 0)
+	{
+		_isRevealed = true;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 1)
+	{
+		_tileSpriteRevealed = _tileSprite1;
+		_isRevealed = true;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 2)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite2;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 3)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite3;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 4)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite4;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 5)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite5;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 6)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite6;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 7)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite7;
+	}
+
+	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 8)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSprite8;
+	}
+
+	else if (!_isRevealed && _isMine && !_isFlag)
+	{
+		_isRevealed = true;
+		_tileSpriteRevealed = _tileSpriteMine;
+	}
+
+	else if (!_isRevealed && !_isMine && _isFlag)
+		;
+
+	else if (!_isRevealed && _isMine && _isFlag)
+		;
+
+	else if (_isRevealed && !_isMine && !_isFlag)
+		;
+
+	else if (_isRevealed && !_isMine && _isFlag)
+		;
+
+	else if (_isRevealed && _isMine && !_isFlag)
+		;
+	else if (_isRevealed && _isMine && _isFlag)
+		;
 }
 
 void Tile::RightClick()
 {
-	if (!_isFlag)
+	if (!_isRevealed && !_isMine && !_isFlag)
+	{
+		_isFlag = true;
 		_flagCounter++;
-	else if (_isFlag)
+	}
+
+
+	else if (!_isRevealed && _isMine && !_isFlag)
+	{
+		_isFlag = true;
+		_flagCounter++;
+	}
+
+	else if (!_isRevealed && !_isMine && _isFlag)
+	{
+		_isFlag = false;
 		_flagCounter--;
-	//if (_tileSpriteHidden = _tileSpriteMine)
-		_isFlag = !_isFlag;
+	}
+
+	else if (!_isRevealed && _isMine && _isFlag)
+	{
+		_isFlag = false;
+		_flagCounter--;
+	}
+
+	else if (_isRevealed && !_isMine && !_isFlag)
+		;
+
+	else if (_isRevealed && !_isMine && _isFlag)
+		;
+
+	else if (_isRevealed && _isMine && !_isFlag)
+		;
+	else if (_isRevealed && _isMine && _isFlag)
+		;
+
 	cout << "Flag counter : " << _flagCounter << endl;
 }
 
@@ -67,4 +193,12 @@ bool Tile::Contains(float x, float y)
 	return _tileSpriteRevealed.getGlobalBounds().contains(x, y);
 	return _tileSpriteMine.getGlobalBounds().contains(x, y);
 	return _tileSpriteFlag.getGlobalBounds().contains(x, y);
+	return _tileSprite1.getGlobalBounds().contains(x, y);
+	return _tileSprite2.getGlobalBounds().contains(x, y);
+	return _tileSprite3.getGlobalBounds().contains(x, y);
+	return _tileSprite4.getGlobalBounds().contains(x, y);
+	return _tileSprite5.getGlobalBounds().contains(x, y);
+	return _tileSprite6.getGlobalBounds().contains(x, y);
+	return _tileSprite7.getGlobalBounds().contains(x, y);
+	return _tileSprite8.getGlobalBounds().contains(x, y);
 }

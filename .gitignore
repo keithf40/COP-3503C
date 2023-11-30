@@ -1,2 +1,5 @@
 # CMakeLists.txt conventional default
 build/
+
+# CLion
+cmake-build-*/

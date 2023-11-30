@@ -28,7 +28,7 @@ public:
 	bool _isFlag;
 	unsigned int _row;
 	unsigned int _column;
-	vector<Tile*> _adjacentTiles;
+	//vector<Tile*> _adjacentTiles;
 	int _flagCounter = 0;
 	int _neighbors = 0;
 public:

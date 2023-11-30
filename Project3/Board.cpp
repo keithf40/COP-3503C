@@ -13,13 +13,12 @@ Board::Board(int numRows, int numCols, int numMines, vector<vector<Tile>> boardI
     _numMines = numMines;
     board = boardInput;
     _minesRemaining = numMines - _flagCounter;
-    //mines = minesInput;
 }
 
 vector<Tile*> Board::getNeighbors(Tile& tile) {
 
     vector<Tile* > neighbors;
-    cout << tile._row << endl;
+//    cout << tile._row << endl;
     // has top neighbors
     if (tile._row > 0) {
 
@@ -73,15 +72,18 @@ vector<Tile*> Board::getNeighbors(Tile& tile) {
 
 void Board::recursiveCheckNeighbors(Tile& tile) {
     auto neighbors = getNeighbors(tile);
+    
     int count = 0;
     for (auto& neighbor : neighbors)
     {
         if (neighbor->_isMine) {
             count++;
         }
-
-
     }
+
+    // update tile with number of mines touching it
+    tile._neighbors = count;
+
     if (count == 0) {
         for (auto& neighbor : neighbors) {
             if (!neighbor->_isRevealed && !neighbor->_isMine && !neighbor->_isFlag) {
@@ -91,8 +93,9 @@ void Board::recursiveCheckNeighbors(Tile& tile) {
         }
     }
 
-    else if (count == 1)
+   /* else if (count == 1) {
         tile._tileSpriteRevealed = tile._tileSprite1;
+    }
     else if (count == 2)
         tile._tileSpriteRevealed = tile._tileSprite2;
     else if (count == 3)
@@ -106,5 +109,5 @@ void Board::recursiveCheckNeighbors(Tile& tile) {
     else if (count == 7)
         tile._tileSpriteRevealed = tile._tileSprite7;
     else if (count == 8)
-        tile._tileSpriteRevealed = tile._tileSprite8;
+        tile._tileSpriteRevealed = tile._tileSprite8;*/
 }

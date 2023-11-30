@@ -69,81 +69,9 @@ void Tile::SetPosition(float x, float y)
 
 void Tile::LeftClick()
 {
-	if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 0)
-	{
-		_isRevealed = true;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 1)
-	{
-		_tileSpriteRevealed = _tileSprite1;
-		_isRevealed = true;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 2)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite2;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 3)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite3;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 4)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite4;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 5)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite5;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 6)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite6;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 7)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite7;
-	}
-
-	else if (!_isRevealed && !_isMine && !_isFlag && _neighbors == 8)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSprite8;
-	}
-
-	else if (!_isRevealed && _isMine && !_isFlag)
-	{
-		_isRevealed = true;
-		_tileSpriteRevealed = _tileSpriteMine;
-	}
-
-	else if (!_isRevealed && !_isMine && _isFlag)
-		;
-
-	else if (!_isRevealed && _isMine && _isFlag)
-		;
-
-	else if (_isRevealed && !_isMine && !_isFlag)
-		;
-
-	else if (_isRevealed && !_isMine && _isFlag)
-		;
-
-	else if (_isRevealed && _isMine && !_isFlag)
-		;
-	else if (_isRevealed && _isMine && _isFlag)
-		;
+	//_neighbors = 8;
+	//_neighbors = 
+	_isRevealed = true;
 }
 
 void Tile::RightClick()
@@ -181,6 +109,7 @@ void Tile::RightClick()
 
 	else if (_isRevealed && _isMine && !_isFlag)
 		;
+
 	else if (_isRevealed && _isMine && _isFlag)
 		;
 

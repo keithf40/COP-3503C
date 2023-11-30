@@ -19,10 +19,16 @@ FetchContent_MakeAvailable(SFML)
 # 2. libopenal-dev
 # 3. libvorbis-dev
 # 4. libflac-dev
+# 30NOV23 MB
+# Further dependencies for Debian are mentioned here:
+# https://www.sfml-dev.org/tutorials/2.6/start-cmake.php
 
-file(COPY config.cfg DESTINATION .)
-file(COPY images DESTINATION .)
-file(COPY boards DESTINATION .)
+file(COPY config.cfg DESTINATION ${PROJECT_BINARY_DIR}/bin)
+file(COPY images DESTINATION ${PROJECT_BINARY_DIR}/bin)
+file(COPY boards DESTINATION ${PROJECT_BINARY_DIR}/bin)
+
+# 30NOV23 MB - Just incase we want these we want these files elsewhere.  Experimental
+#file(CREATE_LINK ${PROJECT_BINARY_DIR}/bin/config.cfg ${PROJECT_BINARY_DIR}/config.cfg SYMBOLIC)
 
 add_executable(${PROJECT_NAME}
     Board.cpp
@@ -31,6 +37,9 @@ add_executable(${PROJECT_NAME}
     TextureManager.cpp
     Tile.cpp)
 
+# 30NOV23 MB
+# sfml_add_library would indicate SFML::Graphics is available (which I prefer)
+# but no such luck
 target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 

@@ -13,6 +13,7 @@ Board::Board(int numRows, int numCols, int numMines, vector<vector<Tile>> boardI
     _numMines = numMines;
     board = boardInput;
     _minesRemaining = numMines - _flagCounter;
+    cout << "new board created" << endl;
 }
 
 vector<Tile*> Board::getNeighbors(Tile& tile) {
@@ -84,14 +85,16 @@ void Board::recursiveCheckNeighbors(Tile& tile) {
     // update tile with number of mines touching it
     tile._neighbors = count;
 
+    
     if (count == 0) {
         for (auto& neighbor : neighbors) {
-            if (!neighbor->_isRevealed && !neighbor->_isMine && !neighbor->_isFlag) {
+            if (!neighbor->_isRevealed && !neighbor->_isMine && !neighbor->_isFlag && !tile._isMine) {
                 neighbor->LeftClick();
                 recursiveCheckNeighbors(*neighbor);
             }
         }
     }
+    
 
    /* else if (count == 1) {
         tile._tileSpriteRevealed = tile._tileSprite1;

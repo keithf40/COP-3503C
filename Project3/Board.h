@@ -19,6 +19,7 @@ public:
 	bool _gameLose = false;
 	bool _gameWin = false;
 	bool _debug = false;
+	bool _cleared = false;
 public:
 	Board(int numRows, int numCols, int numMines, vector<vector<Tile>> boardInput);
 	vector<Tile*> getNeighbors(Tile& tile);

@@ -928,48 +928,160 @@ int main()
         cout << "Number is hundred place: " << hundredDigit << endl;
         
         if (unitDigit == 1)
+        {
             window.draw(digits1);
+            digits1.setPosition(120, 512);
+        }
         else if (unitDigit == 2)
+        {
             window.draw(digits2);
+            digits2.setPosition(120, 512);
+        }
         else if (unitDigit == 3)
+        {
             window.draw(digits3);
+            digits3.setPosition(120, 512);
+        }
         else if (unitDigit == 4)
+        {
             window.draw(digits4);
+            digits4.setPosition(120, 512);
+        }
         else if (unitDigit == 5)
+        {
             window.draw(digits5);
+            digits5.setPosition(120, 512);
+        }
         else if (unitDigit == 6)
+        {
             window.draw(digits6);
+            digits6.setPosition(120, 512);
+        }
         else if (unitDigit == 7)
+        {
             window.draw(digits7);
+            digits7.setPosition(120, 512);
+        }
         else if (unitDigit == 8)
+        {
             window.draw(digits8);
+            digits8.setPosition(120, 512);
+        }
         else if (unitDigit == 9)
+        {
             window.draw(digits9);
+            digits9.setPosition(120, 512);
+        }
         else if (unitDigit == 0)
+        {
             window.draw(digits0);
+            digits0.setPosition(120, 512);
+        }
 
+
+        //Print ten digit
         if (tenDigit == 1)
+        {
             window.draw(digits1);
+            digits1.setPosition(100, 512);
+        }
         else if (tenDigit == 2)
+        {
             window.draw(digits2);
+            digits2.setPosition(100, 512);
+        }
         else if (tenDigit == 3)
+        {
             window.draw(digits3);
+            digits3.setPosition(100, 512);
+        }
         else if (tenDigit == 4)
+        {
             window.draw(digits4);
+            digits4.setPosition(100, 512);
+        }
         else if (tenDigit == 5)
+        {
             window.draw(digits5);
+            digits5.setPosition(70, 512);
+        }
         else if (tenDigit == 6)
+        {
             window.draw(digits6);
+            digits6.setPosition(100, 512);
+        }
         else if (tenDigit == 7)
+        {
             window.draw(digits7);
+            digits7.setPosition(100, 512);
+        }
         else if (tenDigit == 8)
+        {
             window.draw(digits8);
+            digits8.setPosition(100, 512);
+        }
         else if (tenDigit == 9)
+        {
             window.draw(digits9);
+            digits9.setPosition(100, 512);
+        }
         else if (tenDigit == 0)
+        {
             window.draw(digits0);
+            digits0.setPosition(70, 512);
+        }
 
-
+        //Print hundred digit
+        if (hundredDigit == 1)
+        {
+            window.draw(digits1);
+            digits1.setPosition(80, 512);
+        }
+        else if (tenDigit == 2)
+        {
+            window.draw(digits2);
+            digits2.setPosition(80, 512);
+        }
+        else if (hundredDigit == 3)
+        {
+            window.draw(digits3);
+            digits3.setPosition(80, 512);
+        }
+        else if (hundredDigit == 4)
+        {
+            window.draw(digits4);
+            digits4.setPosition(80, 512);
+        }
+        else if (hundredDigit == 5)
+        {
+            window.draw(digits5);
+            digits5.setPosition(80, 512);
+        }
+        else if (hundredDigit == 6)
+        {
+            window.draw(digits6);
+            digits6.setPosition(80, 512);
+        }
+        else if (hundredDigit == 7)
+        {
+            window.draw(digits7);
+            digits7.setPosition(80, 512);
+        }
+        else if (hundredDigit == 8)
+        {
+            window.draw(digits8);
+            digits8.setPosition(80, 512);
+        }
+        else if (hundredDigit == 9)
+        {
+            window.draw(digits9);
+            digits9.setPosition(80, 512);
+        }
+        else if (hundredDigit == 0)
+        {
+            window.draw(digits0);
+            digits0.setPosition(20, 512);
+        }
 
         window.display();
     }

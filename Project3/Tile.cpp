@@ -113,7 +113,7 @@ void Tile::RightClick()
 	else if (_isRevealed && _isMine && _isFlag)
 		;
 
-	cout << "Flag counter : " << _flagCounter << endl;
+	//cout << "Flag counter : " << _flagCounter << endl;
 }
 
 bool Tile::Contains(float x, float y)

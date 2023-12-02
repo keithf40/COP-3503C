@@ -1,0 +1,8 @@
+# CMakeLists.txt conventional default
+build/
+
+# CLion
+cmake-build-*/
+
+# Qt Creator
+CMakeLists.txt.user

@@ -13,7 +13,7 @@ int main()
 {
     //Create window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Minesweeper");
-    
+
 
     //Read config file
     int numCols = 0;
@@ -130,84 +130,84 @@ int main()
     face_win.setPosition(350, 512);
     sf::Sprite face_lose(TextureManager::GetTexture("face_lose"));
     face_lose.setPosition(350, 512);
-    
+
     sf::Sprite digits0(TextureManager::GetTexture("digits"));
     digits0.setPosition(100, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect0(0, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect0(0, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits0.setTextureRect(textureRect0);
 
     sf::Sprite digits1(TextureManager::GetTexture("digits"));
-    digits1.setPosition(120, 512);
+    digits1.setPosition(121, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect1(20, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect1(21, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits1.setTextureRect(textureRect1);
-        
+
     sf::Sprite digits2(TextureManager::GetTexture("digits"));
-    digits2.setPosition(140, 512);
+    digits2.setPosition(142, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect2(40, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect2(42, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits2.setTextureRect(textureRect2);
 
     sf::Sprite digits3(TextureManager::GetTexture("digits"));
-    digits3.setPosition(160, 512);
+    digits3.setPosition(163, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect3(60, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect3(63, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits3.setTextureRect(textureRect3);
 
     sf::Sprite digits4(TextureManager::GetTexture("digits"));
-    digits4.setPosition(180, 512);
+    digits4.setPosition(184, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect4(80, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect4(84, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits4.setTextureRect(textureRect4);
 
     sf::Sprite digits5(TextureManager::GetTexture("digits"));
-    digits5.setPosition(200, 512);
+    digits5.setPosition(205, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect5(100, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect5(105, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits5.setTextureRect(textureRect5);
 
     sf::Sprite digits6(TextureManager::GetTexture("digits"));
-    digits6.setPosition(220, 512);
+    digits6.setPosition(226, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect6(120, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect6(126, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits6.setTextureRect(textureRect6);
 
     sf::Sprite digits7(TextureManager::GetTexture("digits"));
-    digits7.setPosition(240, 512);
+    digits7.setPosition(247, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect7(140, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect7(147, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits7.setTextureRect(textureRect7);
 
     sf::Sprite digits8(TextureManager::GetTexture("digits"));
-    digits8.setPosition(260, 512);
+    digits8.setPosition(268, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect8(160, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect8(168, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits8.setTextureRect(textureRect8);
 
     sf::Sprite digits9(TextureManager::GetTexture("digits"));
-    digits9.setPosition(280, 512);
+    digits9.setPosition(289, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRect9(180, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRect9(189, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digits9.setTextureRect(textureRect9);
 
     sf::Sprite digitsN(TextureManager::GetTexture("digits"));
-    digitsN.setPosition(300, 512);
+    digitsN.setPosition(310, 512);
     // Define a rectangle to specify the portion of the image to be displayed
-    sf::IntRect textureRectN(200, 0, 20, 30); // x, y, width, height
+    sf::IntRect textureRectN(210, 0, 21, 32); // x, y, width, height
     // Set the texture rectangle for the sprite
     digitsN.setTextureRect(textureRectN);
-    
+
 
     while (window.isOpen())
     {
@@ -269,9 +269,9 @@ int main()
                     }
 
                     realBoard = Board(numRows, numCols, numMines, board);
-                    
 
-                    
+
+
 
                     for (int i = 0; i < numRows; i++)
                     {
@@ -380,7 +380,7 @@ int main()
 
                     realBoard = Board(numRows, numCols, numMines, board);
 
-                    
+
 
                     for (int i = 0; i < numRows; i++)
                     {
@@ -544,59 +544,59 @@ int main()
                     && (mousePosition.y > 512 && mousePosition.y < 576))
                 {
 
-/*
-                    //Create Random numbers
-                    const int lowerBound = 0;
-                    const int upperBound = numRows * numCols - 1;
-                    const int numberOfRandomIntegers = numMines;
-                    std::random_device rd;
-                    std::mt19937 generator(rd());
-                    std::uniform_int_distribution<int> distribution(lowerBound, upperBound);
-                    vector<int> uniqueRandomNumbers;
-                    uniqueRandomNumbers.clear();
-                    while (uniqueRandomNumbers.size() < numberOfRandomIntegers)
-                    {
-                        int randomNumber = distribution(generator);
-                        uniqueRandomNumbers.push_back(randomNumber);
-                    }
+                    /*
+                                        //Create Random numbers
+                                        const int lowerBound = 0;
+                                        const int upperBound = numRows * numCols - 1;
+                                        const int numberOfRandomIntegers = numMines;
+                                        std::random_device rd;
+                                        std::mt19937 generator(rd());
+                                        std::uniform_int_distribution<int> distribution(lowerBound, upperBound);
+                                        vector<int> uniqueRandomNumbers;
+                                        uniqueRandomNumbers.clear();
+                                        while (uniqueRandomNumbers.size() < numberOfRandomIntegers)
+                                        {
+                                            int randomNumber = distribution(generator);
+                                            uniqueRandomNumbers.push_back(randomNumber);
+                                        }
 
-                    // Print the generated unique random integers
-                    std::cout << "Generated unique random integers:" << std::endl;
-                    for (int number : uniqueRandomNumbers)
-                        std::cout << number << " ";
-                    std::cout << std::endl;
+                                        // Print the generated unique random integers
+                                        std::cout << "Generated unique random integers:" << std::endl;
+                                        for (int number : uniqueRandomNumbers)
+                                            std::cout << number << " ";
+                                        std::cout << std::endl;
 
 
 
-                    //Set board to random numbers
-                    board.clear();
-                    for (int i = 0; i < numRows; i++)
-                    {
-                        vector<Tile> row;
-                        for (int j = 0; j < numCols; j++) {
-                            row.push_back(Tile(i, j));
-                        }
-                        board.push_back(row);
-                    }
+                                        //Set board to random numbers
+                                        board.clear();
+                                        for (int i = 0; i < numRows; i++)
+                                        {
+                                            vector<Tile> row;
+                                            for (int j = 0; j < numCols; j++) {
+                                                row.push_back(Tile(i, j));
+                                            }
+                                            board.push_back(row);
+                                        }
 
-                    realBoard = Board(numRows, numCols, numMines, board);
+                                        realBoard = Board(numRows, numCols, numMines, board);
 
-                    int counter = 0;
-                    int howManyTimes = 0;
-                    for (int i = 0; i < numRows; i++)
-                    {
-                        for (int j = 0; j < numCols; j++) {
-                            for (int k = 0; k < uniqueRandomNumbers.size(); k++)
-                                if (uniqueRandomNumbers[k] == counter)
-                                {
-                                    realBoard.board[i][j]._isMine = true;
-                                    howManyTimes++;
-                                }
+                                        int counter = 0;
+                                        int howManyTimes = 0;
+                                        for (int i = 0; i < numRows; i++)
+                                        {
+                                            for (int j = 0; j < numCols; j++) {
+                                                for (int k = 0; k < uniqueRandomNumbers.size(); k++)
+                                                    if (uniqueRandomNumbers[k] == counter)
+                                                    {
+                                                        realBoard.board[i][j]._isMine = true;
+                                                        howManyTimes++;
+                                                    }
 
-                            counter++;
-                        }
-                    }
-                    */
+                                                counter++;
+                                            }
+                                        }
+                                        */
                     realBoard = Board(numRows, numCols, numMines, board);
                     // keep placing mines in unique spots until we have 50 (numMines)
                     int minesPlaced = 0;
@@ -675,7 +675,7 @@ int main()
         }
 
 
-        
+
 
 
         /*
@@ -742,9 +742,9 @@ int main()
 
         */
 
-        
-        
-       
+
+
+
 
         if (!realBoard._debug)
         {
@@ -770,41 +770,41 @@ int main()
             }
         }
 
-        
 
-        
-            /*realBoard._flagCounter = 0;
-            for (int i = 0; i < numRows; i++)
+
+
+        /*realBoard._flagCounter = 0;
+        for (int i = 0; i < numRows; i++)
+        {
+            for (int j = 0; j < numCols; j++)
             {
-                for (int j = 0; j < numCols; j++)
-                {
-                    if (realBoard.board[i][j]._isFlag)
-                        realBoard._flagCounter++;
-                }
-            }*/
-        
-            realBoard._minesRemaining = realBoard._numMines - realBoard._flagCounter;
-        
-           // cout << "Flags for digitizer: " << realBoard._flagCounter << endl;
-          //  cout << "Mines remaining for digitizer: " << realBoard._minesRemaining << endl;
-        
-           //if (realBoard._minesRemaining == 0 || realBoard._cleared == true)
-            if (realBoard._cleared == true)
-                realBoard._gameWin = true;
+                if (realBoard.board[i][j]._isFlag)
+                    realBoard._flagCounter++;
+            }
+        }*/
+
+        realBoard._minesRemaining = realBoard._numMines - realBoard._flagCounter;
+
+        // cout << "Flags for digitizer: " << realBoard._flagCounter << endl;
+       //  cout << "Mines remaining for digitizer: " << realBoard._minesRemaining << endl;
+
+        //if (realBoard._minesRemaining == 0 || realBoard._cleared == true)
+        if (realBoard._cleared == true)
+            realBoard._gameWin = true;
 
 
 
-           //NEW FUNCTION
-           realBoard._cleared = true;
-           for (int i = 0; i < numRows; i++)
-           {
-               for (int j = 0; j < numCols; j++)
-               {
-                   if (realBoard.board[i][j]._isMine == false && realBoard.board[i][j]._isRevealed == false)
-                       realBoard._cleared = false;
-               }
+        //NEW FUNCTION
+        realBoard._cleared = true;
+        for (int i = 0; i < numRows; i++)
+        {
+            for (int j = 0; j < numCols; j++)
+            {
+                if (realBoard.board[i][j]._isMine == false && realBoard.board[i][j]._isRevealed == false)
+                    realBoard._cleared = false;
+            }
 
-           }
+        }
 
 
 
@@ -855,8 +855,8 @@ int main()
                     }
 
                 }
-                
-                
+
+
 
                 else if ((realBoard._gameLose && tile._isMine) || realBoard._debug && tile._isMine)
                 {
@@ -869,7 +869,7 @@ int main()
                     window.draw(tile._tileSpriteMine);
 
                 }
-              
+
 
 
                 else if (!tile._isRevealed)
@@ -886,7 +886,7 @@ int main()
 
 
 
-        
+
 
 
 
@@ -900,7 +900,7 @@ int main()
         window.draw(test_1);
         window.draw(test_2);
         window.draw(test_3);
-        
+
         if (realBoard._gameLose == true)
             window.draw(face_lose);
         else if (realBoard._gameWin == true)
@@ -920,13 +920,45 @@ int main()
         //window.draw(digits9);
         //window.draw(digitsN);
         cout << "Number in digitizer: " << realBoard._minesRemaining << endl;
-        int unitDigit = realBoard._minesRemaining % 10;
-        cout << "Number is unit place: " << unitDigit << endl;
-        int tenDigit = (realBoard._minesRemaining % 100 - unitDigit)/10;
-        cout << "Number is ten place: " << tenDigit << endl;
-        int hundredDigit = (realBoard._minesRemaining % 1000 - tenDigit*10 - unitDigit)/100;
-        cout << "Number is hundred place: " << hundredDigit << endl;
+
+        int unitDigit = 0;
+        int tenDigit = 0;
+        int hundredDigit = 0;
+
+        //Print negative digit
+        if (realBoard._minesRemaining < 0)
+        {
+            window.draw(digitsN);
+            digitsN.setPosition(57, 512);
+        }
+
+
+        if (realBoard._minesRemaining >= 0)
+        {
+            unitDigit = realBoard._minesRemaining % 10;
+            cout << "Number is unit place: " << unitDigit << endl;
+
+            tenDigit = (realBoard._minesRemaining % 100 - unitDigit) / 10;
+            cout << "Number is ten place: " << tenDigit << endl;
+
+            hundredDigit = (realBoard._minesRemaining % 1000 - tenDigit * 10 - unitDigit) / 100;
+            cout << "Number is hundred place: " << hundredDigit << endl;
+        }
+
+        else
+        {
+            realBoard._minesRemaining = -1 * realBoard._minesRemaining;
+            unitDigit = realBoard._minesRemaining % 10;
+            cout << "Number is unit place: " << unitDigit << endl;
+
+            tenDigit = (realBoard._minesRemaining % 100 - unitDigit) / 10;
+            cout << "Number is ten place: " << tenDigit << endl;
+                       
+            hundredDigit = (realBoard._minesRemaining % 1000 - tenDigit * 10 - unitDigit) / 100;
+            cout << "Number is hundred place: " << hundredDigit << endl;
+        }
         
+        //Print unit digit
         if (unitDigit == 1)
         {
             window.draw(digits1);
@@ -983,106 +1015,107 @@ int main()
         if (tenDigit == 1)
         {
             window.draw(digits1);
-            digits1.setPosition(100, 512);
+            digits1.setPosition(99, 512);
         }
         else if (tenDigit == 2)
         {
             window.draw(digits2);
-            digits2.setPosition(100, 512);
+            digits2.setPosition(99, 512);
         }
         else if (tenDigit == 3)
         {
             window.draw(digits3);
-            digits3.setPosition(100, 512);
+            digits3.setPosition(99, 512);
         }
         else if (tenDigit == 4)
         {
             window.draw(digits4);
-            digits4.setPosition(100, 512);
+            digits4.setPosition(99, 512);
         }
         else if (tenDigit == 5)
         {
             window.draw(digits5);
-            digits5.setPosition(70, 512);
+            digits5.setPosition(99, 512);
         }
         else if (tenDigit == 6)
         {
             window.draw(digits6);
-            digits6.setPosition(100, 512);
+            digits6.setPosition(99, 512);
         }
         else if (tenDigit == 7)
         {
             window.draw(digits7);
-            digits7.setPosition(100, 512);
+            digits7.setPosition(99, 512);
         }
         else if (tenDigit == 8)
         {
             window.draw(digits8);
-            digits8.setPosition(100, 512);
+            digits8.setPosition(99, 512);
         }
         else if (tenDigit == 9)
         {
             window.draw(digits9);
-            digits9.setPosition(100, 512);
+            digits9.setPosition(99, 512);
         }
         else if (tenDigit == 0)
         {
             window.draw(digits0);
-            digits0.setPosition(70, 512);
+            digits0.setPosition(99, 512);
         }
 
         //Print hundred digit
         if (hundredDigit == 1)
         {
             window.draw(digits1);
-            digits1.setPosition(80, 512);
+            digits1.setPosition(78, 512);
         }
-        else if (tenDigit == 2)
+        else if (hundredDigit == 2)
         {
             window.draw(digits2);
-            digits2.setPosition(80, 512);
+            digits2.setPosition(78, 512);
         }
         else if (hundredDigit == 3)
         {
             window.draw(digits3);
-            digits3.setPosition(80, 512);
+            digits3.setPosition(78, 512);
         }
         else if (hundredDigit == 4)
         {
             window.draw(digits4);
-            digits4.setPosition(80, 512);
+            digits4.setPosition(78, 512);
         }
         else if (hundredDigit == 5)
         {
             window.draw(digits5);
-            digits5.setPosition(80, 512);
+            digits5.setPosition(78, 512);
         }
         else if (hundredDigit == 6)
         {
             window.draw(digits6);
-            digits6.setPosition(80, 512);
+            digits6.setPosition(78, 512);
         }
         else if (hundredDigit == 7)
         {
             window.draw(digits7);
-            digits7.setPosition(80, 512);
+            digits7.setPosition(78, 512);
         }
         else if (hundredDigit == 8)
         {
             window.draw(digits8);
-            digits8.setPosition(80, 512);
+            digits8.setPosition(78, 512);
         }
         else if (hundredDigit == 9)
         {
             window.draw(digits9);
-            digits9.setPosition(80, 512);
+            digits9.setPosition(78, 512);
         }
         else if (hundredDigit == 0)
         {
             window.draw(digits0);
-            digits0.setPosition(20, 512);
+            digits0.setPosition(78, 512);
         }
 
+        
         window.display();
     }
 

@@ -926,14 +926,14 @@ int main()
         int hundredDigit = 0;
 
         //Print negative digit
-        if (realBoard._minesRemaining < 0)
+        if (realBoard._minesRemaining < 0 && !realBoard._gameWin)
         {
             window.draw(digitsN);
             digitsN.setPosition(57, 512);
         }
 
 
-        if (realBoard._minesRemaining >= 0)
+        if (realBoard._minesRemaining >= 0 && !realBoard._gameWin)
         {
             unitDigit = realBoard._minesRemaining % 10;
             cout << "Number is unit place: " << unitDigit << endl;
@@ -945,7 +945,7 @@ int main()
             cout << "Number is hundred place: " << hundredDigit << endl;
         }
 
-        else
+        else if (realBoard._minesRemaining < 0 && !realBoard._gameWin)
         {
             realBoard._minesRemaining = -1 * realBoard._minesRemaining;
             unitDigit = realBoard._minesRemaining % 10;
@@ -956,6 +956,13 @@ int main()
                        
             hundredDigit = (realBoard._minesRemaining % 1000 - tenDigit * 10 - unitDigit) / 100;
             cout << "Number is hundred place: " << hundredDigit << endl;
+        }
+
+        else
+        {
+            unitDigit = 0;
+            tenDigit = 0;
+            hundredDigit = 0;
         }
         
         //Print unit digit

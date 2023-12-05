@@ -19,8 +19,8 @@ Board::Board(int numRows, int numCols, int numMines, vector<vector<Tile>> boardI
 vector<Tile*> Board::getNeighbors(Tile& tile) {
 
     vector<Tile* > neighbors;
-//    cout << tile._row << endl;
-    // has top neighbors
+    //    cout << tile._row << endl;
+        // has top neighbors
     if (tile._row > 0) {
 
         // has top left
@@ -73,7 +73,7 @@ vector<Tile*> Board::getNeighbors(Tile& tile) {
 
 void Board::recursiveCheckNeighbors(Tile& tile) {
     auto neighbors = getNeighbors(tile);
-    
+
     int count = 0;
     for (auto& neighbor : neighbors)
     {
@@ -85,7 +85,7 @@ void Board::recursiveCheckNeighbors(Tile& tile) {
     // update tile with number of mines touching it
     tile._neighbors = count;
 
-    
+
     if (count == 0) {
         for (auto& neighbor : neighbors) {
             if (!neighbor->_isRevealed && !neighbor->_isMine && !neighbor->_isFlag && !tile._isMine) {
@@ -94,23 +94,23 @@ void Board::recursiveCheckNeighbors(Tile& tile) {
             }
         }
     }
-    
 
-   /* else if (count == 1) {
-        tile._tileSpriteRevealed = tile._tileSprite1;
-    }
-    else if (count == 2)
-        tile._tileSpriteRevealed = tile._tileSprite2;
-    else if (count == 3)
-        tile._tileSpriteRevealed = tile._tileSprite3;
-    else if (count == 4)
-        tile._tileSpriteRevealed = tile._tileSprite4;
-    else if (count == 5)
-        tile._tileSpriteRevealed = tile._tileSprite5;
-    else if (count == 6)
-        tile._tileSpriteRevealed = tile._tileSprite6;
-    else if (count == 7)
-        tile._tileSpriteRevealed = tile._tileSprite7;
-    else if (count == 8)
-        tile._tileSpriteRevealed = tile._tileSprite8;*/
+
+    /* else if (count == 1) {
+         tile._tileSpriteRevealed = tile._tileSprite1;
+     }
+     else if (count == 2)
+         tile._tileSpriteRevealed = tile._tileSprite2;
+     else if (count == 3)
+         tile._tileSpriteRevealed = tile._tileSprite3;
+     else if (count == 4)
+         tile._tileSpriteRevealed = tile._tileSprite4;
+     else if (count == 5)
+         tile._tileSpriteRevealed = tile._tileSprite5;
+     else if (count == 6)
+         tile._tileSpriteRevealed = tile._tileSprite6;
+     else if (count == 7)
+         tile._tileSpriteRevealed = tile._tileSprite7;
+     else if (count == 8)
+         tile._tileSpriteRevealed = tile._tileSprite8;*/
 }
